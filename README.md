@@ -22,7 +22,7 @@
 最终目标：给盲样输入（吸光值 + 材料），模型自动预测油类类别。
 
 ## 📁 2. 项目结构
-’‘’
+```plaintext
 oil-type-discrimination/
 ├── README.md
 ├── requirements.txt
@@ -45,7 +45,7 @@ oil-type-discrimination/
 │ └── predictions/
 ├── models/
 └── .gitignore
-、、、
+```
 
 ## 🧪 3. 安装依赖
 
@@ -108,9 +108,9 @@ python src/predict.py --model models/best_model.pkl --input blind_sample.csv
 - 模型性能曲线（可选）
 
 ## 📘 9. 依赖
-scikit-learn
-xgboost
-lightgbm
-catboost
-pandas / numpy
-matplotlib / seaborn（仅 EDA）
+- scikit-learn
+- xgboost
+- lightgbm
+- catboost
+- pandas / numpy
+- matplotlib / seaborn（仅 EDA）
