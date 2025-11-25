@@ -1,16 +1,37 @@
-# Node rules:
-## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
 
-## Dependency directory
-## Commenting this out is preferred by some people, see
-## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
-node_modules
+---
 
-# Book build output
-_book
+# ✅ 2. .gitignore（针对 ML 项目优化）
 
-# eBook build output
-*.epub
-*.mobi
-*.pdf
+```gitignore
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data
+data/processed/
+data/*.zip
+data/*.xlsx
+
+# Models
+models/*.pkl
+models/*.joblib
+
+# Logs
+logs/
+results/metrics/
+results/figures/
+results/predictions/
+
+# System
+.DS_Store
+Thumbs.db
