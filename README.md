@@ -21,8 +21,8 @@
 
 最终目标：给盲样输入（吸光值 + 材料），模型自动预测油类类别。
 
-
 ## 📁 2. 项目结构
+’‘’
 oil-type-discrimination/
 ├── README.md
 ├── requirements.txt
@@ -45,23 +45,25 @@ oil-type-discrimination/
 │ └── predictions/
 ├── models/
 └── .gitignore
-
+、、、
 
 ## 🧪 3. 安装依赖
+
 Python 版本建议：**3.8–3.10**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-📊 4. 数据准备
+## 📊 4. 数据准备
+
 将原始实验数据放入：data/raw/data-923.csv
 系统会自动：
 - LabelEncoder 转换油类标签
 - StandardScaler 进行特征标准化
 - train/test 7:3 划分（分层抽样）
 
-🏋️ 5. 模型训练
+## 🏋️ 5. 模型训练
 
 python src/train.py
 
@@ -77,7 +79,8 @@ python src/train.py
 accuracy: 0.88
 
 
-📈 6. 性能评估
+## 📈 6. 性能评估
+
 查看某个模型的详细分类报告：
 ```
 python src/evaluate.py --model models/best_model.pkl
@@ -87,7 +90,7 @@ python src/evaluate.py --model models/best_model.pkl
 - 混淆矩阵（可选）
 - 类别性能
 
-🔍 7. 盲样预测（核心用途）
+## 🔍 7. 盲样预测（核心用途）
 将盲样放入 CSV：blind_sample.csv
 并预测油类：
 ```
@@ -95,7 +98,7 @@ python src/predict.py --model models/best_model.pkl --input blind_sample.csv
 ```
 输出：results/predictions/pred_result.csv
 
-🧪 8. Notebook（EDA）
+## 🧪 8. Notebook（EDA）
 项目包含：notebooks/01_eda.ipynb
 内容包括：
 - 各酶材料分布
@@ -104,7 +107,7 @@ python src/predict.py --model models/best_model.pkl --input blind_sample.csv
 - PCA 可视化
 - 模型性能曲线（可选）
 
-📘 9. 依赖
+## 📘 9. 依赖
 scikit-learn
 xgboost
 lightgbm
