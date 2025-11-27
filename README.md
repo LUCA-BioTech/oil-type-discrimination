@@ -103,7 +103,7 @@ python src/predict.py --model models/best_model.pkl --input blind_sample.csv
 - 模型训练
 - 可视化
   - Feature Correlation Matrix → 展示高相关特征，说明 LDA 合理性
-  - LDA Scree Plot → 前 3 维覆盖 80% 变异，说明降维选择!
+  - LDA Scree Plot → 前 3 维覆盖 80% 变异，说明降维选择
   - GaussianNB 2D/3D Prediction → 前 2 维坐标 + 模型预测标注，突出预测效果
   - ROC 曲线 → 模型判别能力量化
  
