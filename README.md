@@ -31,7 +31,7 @@ oil-type-discrimination/
 │ │ └── data-923.csv
 │ └── processed/
 ├── notebooks/
-│ └── 01_eda.ipynb
+│ └── iol_classification.ipynb
 ├── src/
 │ ├── config.py
 │ ├── data_loader.py
@@ -100,6 +100,7 @@ python src/predict.py --model models/best_model.pkl --input blind_sample.csv
 
 ## 🧪 8. Notebook（EDA）
 项目包含：notebooks/iol_classification.ipynb,对应文章的算法和可视化代码
+
 内容包括：
 - 模型训练
 - 可视化
