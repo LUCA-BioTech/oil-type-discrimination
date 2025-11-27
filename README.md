@@ -61,7 +61,6 @@ pip install -r requirements.txt
 系统会自动：
 - LabelEncoder 转换油类标签
 - StandardScaler 进行特征标准化
-- train/test 7:3 划分（分层抽样）
 
 ## 🏋️ 5. 模型训练
 
@@ -73,7 +72,6 @@ python src/train.py
 - precision: 1.00
 - recall: 1.00
 - F1: 1.00
-- Kappa: 1.00
 
 模型：VotingClassifier
 accuracy: 1.00
