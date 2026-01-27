@@ -1,37 +1,29 @@
-from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score, matthews_corrcoef
-from .data_loader import load_data
-from .models import get_models
+import json
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import StratifiedKFold, cross_val_score
+from model.ml_model import MLModel
 
-def train_evaluate(clf, X_train, y_train, X_test, y_test):
-    clf.fit(X_train, y_train)
-    y_pred = clf.predict(X_test)
+# 加载数据
+df = pd.read_csv("data/raw/data-923.csv")
+X = df[[f"en{i}" for i in range(1,16)]].values
+y = df["cate"].values
 
-    metrics = {
-        "accuracy": accuracy_score(y_test, y_pred),
-        "recall": recall_score(y_test, y_pred, average='macro'),
-        "precision": precision_score(y_test, y_pred, average='macro'),
-        "f1": f1_score(y_test, y_pred, average='macro'),
-        "kappa": matthews_corrcoef(y_test, y_pred)
-    }
+model = MLModel()
 
-    print(f"\n模型：{clf.__class__.__name__}")
-    for k, v in metrics.items():
-        print(f"{k}: {v}")
+cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 
-    return metrics
+# 交叉验证
+scores = cross_val_score(model.pipe, X, y, cv=cv, scoring="accuracy")
 
-def main():
-    X_train, X_test, y_train, y_test, _ = load_data()
+results = {
+    "cv_scores": scores.tolist(),
+    "mean_acc": float(np.mean(scores)),
+    "std_acc": float(np.std(scores))
+}
 
-    classifiers, voting_clf = get_models()
+print(results)
 
-    # single models
-    for name, clf in classifiers.items():
-        train_evaluate(clf, X_train, y_train, X_test, y_test)
-
-    # voting model
-    print("\n=== Voting Classifier ===")
-    train_evaluate(voting_clf, X_train, y_train, X_test, y_test)
-
-if __name__ == "__main__":
-    main()
+# 保存实验结果到本地
+with open("experiments/base_model/metrics.json", "w") as fp:
+    json.dump(results, fp, indent=4)
