@@ -16,6 +16,7 @@ env/
 
 # Jupyter
 .ipynb_checkpoints/
+notebooks/output/
 
 # Data
 data/processed/

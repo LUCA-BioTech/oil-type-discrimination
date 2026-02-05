@@ -1,0 +1,19 @@
+{
+  "method": "stratified_5fold_cv",
+  "description": "5-fold stratified cross-validation with random_state=42",
+  "n_samples": 78,
+  "n_features": 15,
+  "n_classes": 13,
+  "cv_folds": 5,
+  "cv_scores": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "mean_accuracy": 1.0,
+  "std_accuracy": 0.0,
+  "min_accuracy": 1.0,
+  "max_accuracy": 1.0
+}
