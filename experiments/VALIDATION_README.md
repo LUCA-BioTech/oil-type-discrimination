@@ -18,27 +18,27 @@ The validation framework employs **five independent validation methods** to demo
 
 Run all validations at once:
 ```bash
-python3 src/run_all_validations.py
+python3 src/validation/run_all_validations.py
 ```
 
 Run individual validations:
 ```bash
-python3 src/leave_replicate_out.py      # Leave-replicate-out CV
-python3 src/multi_seed_cv.py            # Multi-seed stability
-python3 src/feature_ablation.py         # Feature ablation
-python3 src/leave_one_oil_out.py        # Leave-one-oil-out
-python3 src/label_permutation_test.py   # Label permutation test
+python3 src/validation/leave_replicate_out.py      # Leave-replicate-out CV
+python3 src/validation/multi_seed_cv.py            # Multi-seed stability
+python3 src/validation/feature_ablation.py         # Feature ablation
+python3 src/validation/leave_one_oil_out.py        # Leave-one-oil-out
+python3 src/validation/label_permutation_test.py   # Label permutation test
 ```
 
 Generate comprehensive report:
 ```bash
-python3 src/generate_validation_report.py
+python3 src/validation/generate_validation_report.py
 ```
 
 ## Directory Structure
 
 ```
-src/
+src/validation
 ├── validation.py                   # Core validation framework
 ├── leave_replicate_out.py          # Leave-replicate-out CV
 ├── multi_seed_cv.py                # Multi-seed CV with CI
